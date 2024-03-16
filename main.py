@@ -6,7 +6,7 @@ import numpy as np
 from sklearn import linear_model, preprocessing
 
 
-data = pd.read_csv("car.data")
+data = pd.read_csv("cars.data")
 
 le = preprocessing.LabelEncoder()
 buying = le.fit_transform(list(data["buying"]))
@@ -25,7 +25,7 @@ y = list(cls)
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size = 0.1)
 
 
-k = 9
+k = 9  # Change this ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 model = KNeighborsClassifier(n_neighbors=k)
 model.fit(x_train, y_train)
